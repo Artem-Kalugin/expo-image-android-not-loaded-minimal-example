@@ -5,6 +5,7 @@
  * @format
  */
 
+import {Image} from 'expo-image';
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -24,6 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Images from './config/images';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -64,6 +66,13 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
+      <Image
+        source={require('./assets/images/logo-og.png')}
+        style={{
+          width: 300,
+          height: 300,
+        }}
+      />
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
